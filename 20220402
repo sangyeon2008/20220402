@@ -1,0 +1,89 @@
+# 파일생성 하기
+# 파일을 생성하기 위해 내장 함수 open을 사용한다.
+# f = open("새파일.txt",'w')
+#
+# 파일 열기 모드 종류
+# 파일 열기 모드에는 r,w,a가 있다.
+# r-읽기 모드: 파일을 읽기만 할 때 사용
+# w-쓰기 모드: 파일에 내용을 쓸대 사용
+
+# 파일 닫기
+# close를 사용해서 열려있는 파일을 닫아주는게 좋다.
+# for i in range(1,11):
+#     data = "%d번째 줄입니다.\n"%i
+#     print(data)
+
+
+# f=open("새파일.txt",'w')
+# for i in range(1,11):
+#     data = "%d번째 줄입니다.\n"%i
+#     f.write(data)
+# f.close()
+
+# f= open("새파일.txt",'r')
+# line = f.readline()
+# print(line)
+# f.close()
+
+# f = open("새파일.txt",'r')
+# while True:
+#     line = f.readline()
+#     if not line:
+#         break
+#     print(line)
+# f.close
+
+# f = open("새파일.txt",'r')
+# lines = f.readlines()
+# for line in lines:
+#     line =line.strip()
+#     print(line)
+# f.close
+
+# f = open("새파일.txt",'r')
+# data=f.read(data)
+# print
+# f.close()
+
+# f=open("새파일.txt",'a')
+# for i in range(11,20):
+#     data = "%d 번째 줄입니다.\n"%i
+#     f.write(data)
+# f.close
+
+
+# f = open("foo.txt",'w')
+# f.write("life is too shor, you need python")
+# f.close()
+
+# with open("foo.txt","w")as f:
+#     f.write("life is too short,you need python")
+
+# file_name = "password.txt"
+# f = open(file_name,"w")    #-->1단계 파일 생성하기
+# while True:
+#     url = input("사이트 : ")
+#     if url == "exit":
+#         break
+#     my_str = url.replace("https://www.","")
+#     my_str = my_str[:my_str.find(".")]
+#     print("방문 사이트 :"+ my_str)
+#
+#     pswd = my_str[:3]+str(len(my_str))+str(my_str.count("o"))+"!"+"LSY"
+#     print("비밀번호:"+pswd)
+#     f.write(pswd + "\n")#-->2단계
+# f.close() #-->3단계
+
+# f = open('score.txt','r')
+# score = dict()
+# for line in f:
+#     info = line.split()
+#     key =info[0]
+#     value = [int(x) for x in info[1:]]
+#     score[key] = value
+# 
+# for k, v in score.items():
+#     avg = (sum(v)-min(v)) /3
+#     print('{} - {:.2f}'.format(k,avg))
+#     
+# f.close()
